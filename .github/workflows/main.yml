@@ -23,10 +23,9 @@ jobs:
         pip install -r requirements.txt
         pip install poetry
         poetry install
-    - name: poetry Build and publish
-      run: |
-        poetry build
-        poetry publish --username kayrocesar --password ${{secrets.pyPIsecret}}
+        
+    - name: flake8 Lint Test
+      uses: py-actions/flake8@v2
 
    
           
