@@ -18,11 +18,12 @@ jobs:
       with:
         python-version: 3.9
 
-    - name: Install Poetry
-      uses: snok/install-poetry@v1
-
-    - name: Install dependencies with poetry 
-      run: poetry install
-
+    - name: Install dependencies
+      run: |
+        python -m venv .env
+        source .env/bin/activate
+        pip install -r requirements.txt
+        pip install poetry
+        poetry install
   
     
