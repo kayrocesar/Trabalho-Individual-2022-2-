@@ -26,9 +26,11 @@ jobs:
         pip install poetry
         poetry install
         pip install flake8
-        
-    - name: Lint Test code with Flake8
-      run: flake8 src/ --max-line=150
+        pip install pytest
+   - name: Pytest
+      run: |
+        export PYTHONPATH=src
+        pytest --cov
           
     
     
