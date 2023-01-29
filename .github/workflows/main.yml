@@ -27,7 +27,8 @@ jobs:
         poetry install
         pip install flake8
         pip install pytest
-   - name: Pytest
+        
+    - name: Pytest
       run: |
         export PYTHONPATH=src
         pytest --cov
